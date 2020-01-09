@@ -8,5 +8,7 @@ RUN apk update --no-cache \
 
 RUN curl -L https://deployer.org/releases/v$DEPLOYER_VERSION/deployer.phar > /usr/local/bin/dep \
     && chmod +x /usr/local/bin/dep
+    
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 CMD ["php", "-a"]
